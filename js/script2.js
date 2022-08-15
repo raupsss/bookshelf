@@ -144,3 +144,20 @@ function createUnreadButton() {
         undoBookDone(parent.parentElement);
     });
 }
+
+function undoBookDone(elemenBuku) {
+    const bookTitle = elemenBuku.querySelector(".title_book").innerText;
+    const bookAuthor = elemenBuku.querySelector(".author_book").innerText;
+    const bookYear = elemenBuku.querySelector(".year_book").innerText;
+
+    const newBook = makeReadingList(bookTitle, bookAuthor, bookYear, false);
+    const listUnread = document.getElementById(LIST_UNREAD);
+
+    const book = findBook(elemenBuku[ID_BOOK]);
+    book.isCompleted = false;
+    newBook[ID_BOOK] = book.id;
+    listUnread.append(newBook);
+    elemenBuku.remove();
+
+    updateDataToStorage();
+}
