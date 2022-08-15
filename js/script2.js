@@ -89,7 +89,7 @@ function addBookDone(elemenBuku) {
     const listDone = document.getElementById(LIST_DONE);
     const book = findBook(elemenBuku[ID_BOOK]);
     book.isCompleted = true;
-    newBook[ID_BUKU] = book.id;
+    newBook[ID_BOOK] = book.id;
     listDone.append(newBook);
     elemenBuku.remove();
     updateDataToStorage();
@@ -125,8 +125,8 @@ function createUnreadButton() {
 
 function undoBookDone(elemenBuku) {
     const bookTitle = elemenBuku.querySelector(".title_book").innerText;
-    const bookAuthor = elemenBuku.querySelector(".author_buku").innerText;
-    const bookYear = elemenBuku.querySelector(".year_buku").innerText;
+    const bookAuthor = elemenBuku.querySelector(".author_book").innerText;
+    const bookYear = elemenBuku.querySelector(".year_book").innerText;
 
     const newBook = makeReadingList(bookTitle, bookAuthor, bookYear, false);
     const listUnread = document.getElementById(LIST_UNREAD);
