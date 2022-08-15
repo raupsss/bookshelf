@@ -209,7 +209,7 @@ h1{
     transition: .5s;
 }
 
-.book_item .checklist{
+/* .book_item .checklist{ 
     background-image: url("img/checked.svg");
     background-repeat: no-repeat;
 }
@@ -222,7 +222,7 @@ h1{
 .book_item .trash{
     background-image: url("img/trash.svg");
     background-repeat: no-repeat;
-}
+} */
 
 .input-container{
     margin: 30px 0px;

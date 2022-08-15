@@ -7,6 +7,12 @@ document.addEventListener("DOMContentLoaded", function() {
         deleteForm();
     });
 
+    const submitFind = document.getElementById("findSubmit");
+    submitFind.addEventListener ('click', function(event) {
+        event.preventDefault();
+        refreshData();
+    });
+
     if (isStorageExist()) {
         loadDataFromStorage();
     }

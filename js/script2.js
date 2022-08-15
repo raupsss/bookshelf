@@ -69,11 +69,12 @@ function deleteForm() {
     document.getElementById("inputAuthor").value = "";
     document.getElementById("inputYear").value = "";
     document.getElementById("inputCheckbox").checked = false;
+    document.querySelector(".status").innerHTML = "<strong> Unread</strong>";
 }
 
 function makeButton(buttonTypeClass, eventListener) {
     const tombol = document.createElement("button");
-    tombol.classList.add(buttonTypeClass);
+    tombol.innerHTML = `<img src="img/${buttonTypeClass}.svg alt="${buttonTypeClass}">`
     tombol.addEventListener("click", function(event) {
         eventListener(event);
     });
@@ -117,7 +118,7 @@ function undoBookDone(elemenBuku) {
 }
 
 function createDoneButton() {
-    return makeButton("checklist", function(event) {
+    return makeButton("checked", function(event) {
         const parent = event.target.parentElement;
         addBookDone(parent.parentElement);
     });
@@ -138,23 +139,8 @@ function createDeleteButton() {
 }
 
 function createUnreadButton() {
-    return makeButton("undo", function(event) {
+    return makeButton("restart", function(event) {
         const parent = event.target.parentElement;
         undoBookDone(parent.parentElement);
     });
-}
-
-function refreshData() {
-    const listUnread = document.getElementById(LIST_UNREAD);
-    const listDone = document.getElementById(LIST_DONE);
-    for (book of bookshelfData) {
-        const newBook  = makeReadingList(book.title, book.author, book.year, book.isCompleted);
-        newBook[ID_BOOK] = book.id;
-        
-        if (book.isCompleted) {
-            listDone.append(newBook);
-        } else {
-            listUnread.append(newBook);
-        }
-    }
 }

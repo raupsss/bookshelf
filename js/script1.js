@@ -58,5 +58,24 @@ function findBookIndex(bookId) {
     return -1;
 }
 
-// dibawah ini sebelumnya function refrehData
+function refreshData() {
+    const findTitle = document.getElementById("findBookTitle").value;
+    const listUnread = document.getElementById(LIST_UNREAD);
+    const listDone = document.getElementById(LIST_DONE);
+    listUnread.innerHTML = '';
+    listDone.innerHTML = '';
+    for (book of bookshelfData) {
+        if(findTitle != '' && book.title != findTitle) {
+            continue;
+        }
+        const newBook  = makeReadingList(book.title, book.author, book.year, book.isCompleted);
+        newBook[ID_BOOK] = book.id;
+        
+        if (book.isCompleted) {
+            listDone.append(newBook);
+        } else {
+            listUnread.append(newBook);
+        }
+    }
+}
 
