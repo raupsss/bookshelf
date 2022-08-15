@@ -58,19 +58,5 @@ function findBookIndex(bookId) {
     return -1;
 }
 
-// dibawah ini belum di koreksi
+// dibawah ini sebelumnya function refrehData
 
-function refreshData() {
-    const listUnread = document.getElementById(LIST_UNREAD);
-    const listDone = document.getElementById(LIST_DONE);
-    for (book of bookshelfData) {
-        const newBook  = makeReadingList(book.title, book.author, book.year, book.isCompleted);
-        newBook[ID_BOOK] = book.id;
-        
-        if (book.isCompleted) {
-            listDone.append(newBook);
-        } else {
-            listUnread.append(newBook);
-        }
-    }
-}

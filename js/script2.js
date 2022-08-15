@@ -88,10 +88,31 @@ function addBookDone(elemenBuku) {
     const newBook = makeReadingList(bookTitle, bookAuthor, bookYear, true);
     const listDone = document.getElementById(LIST_DONE);
     const book = findBook(elemenBuku[ID_BOOK]);
+
     book.isCompleted = true;
-    newBook[ID_BUKU] = book.id;
+    newBook[ID_BOOK] = book.id;
     listDone.append(newBook);
+
     elemenBuku.remove();
+
+    updateDataToStorage();
+}
+
+function undoBookDone(elemenBuku) {
+    const bookTitle = elemenBuku.querySelector(".title_book").innerText;
+    const bookAuthor = elemenBuku.querySelector(".author_book").innerText;
+    const bookYear = elemenBuku.querySelector(".year_book").innerText;
+
+    const newBook = makeReadingList(bookTitle, bookAuthor, bookYear, false);
+    const listUnread = document.getElementById(LIST_UNREAD);
+
+    const book = findBook(elemenBuku[ID_BOOK]);
+    book.isCompleted = false;
+    newBook[ID_BOOK] = book.id;
+    listUnread.append(newBook);
+
+    elemenBuku.remove();
+
     updateDataToStorage();
 }
 
@@ -123,19 +144,17 @@ function createUnreadButton() {
     });
 }
 
-function undoBookDone(elemenBuku) {
-    const bookTitle = elemenBuku.querySelector(".title_book").innerText;
-    const bookAuthor = elemenBuku.querySelector(".author_buku").innerText;
-    const bookYear = elemenBuku.querySelector(".year_buku").innerText;
-
-    const newBook = makeReadingList(bookTitle, bookAuthor, bookYear, false);
+function refreshData() {
     const listUnread = document.getElementById(LIST_UNREAD);
-
-    const book = findBook(elemenBuku[ID_BOOK]);
-    book.isCompleted = false;
-    newBook[ID_BOOK] = book.id;
-    listUnread.append(newBook);
-    elemenBuku.remove();
-
-    updateDataToStorage();
+    const listDone = document.getElementById(LIST_DONE);
+    for (book of bookshelfData) {
+        const newBook  = makeReadingList(book.title, book.author, book.year, book.isCompleted);
+        newBook[ID_BOOK] = book.id;
+        
+        if (book.isCompleted) {
+            listDone.append(newBook);
+        } else {
+            listUnread.append(newBook);
+        }
+    }
 }

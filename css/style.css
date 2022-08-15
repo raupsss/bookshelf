@@ -167,16 +167,6 @@ h1{
     height: 25px;
 }
 
-.book_shelf > .book_list > .book_item > .action > .green {
-    background-color: darkgreen;
-    color: white;
-}
-
-.book_shelf > .book_list > .book_item > .action > .red {
-    background-color: darkred;
-    color: white;
-}
-
 .item h5 {
     font-weight: 400;
     margin-top: 1.75rem;
