@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 main{
@@ -24,10 +24,10 @@ main{
 }
 
 h1{
-    background: #EBD8C3;
-    font-weight: bold;
+    font-size: 40px;
     padding: 15px;
     color: #706a49;
+    margin-left: 50px;
 }
 
 .find_section > form {
@@ -35,7 +35,7 @@ h1{
     width: 100%;
     display: grid;
     grid-template-columns: auto 1fr 0.5fr;
-    grid-gap: 10px;
+    grid-gap: 5px;
     background-color: #EBD8C3;
 }
 
@@ -241,6 +241,9 @@ h1{
     
     .shelf-container {
         flex-direction: column;
+    }
+    h1 {
+        margin-left: 0;
     }
 }
 
