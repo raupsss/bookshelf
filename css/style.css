@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
 main{
@@ -25,8 +25,9 @@ main{
 
 h1{
     background: #EBD8C3;
+    font-weight: bold;
     padding: 15px;
-    color: #87805E;
+    color: #706a49;
 }
 
 .find_section > form {
@@ -44,6 +45,9 @@ h1{
 
 }
 
+#findSubmit:hover {
+    background-color: #706a49;
+}
 .find_section > form > button {
     background-color: #87805E;
     color: white;
@@ -87,8 +91,16 @@ h1{
     cursor: pointer;
 }
 
+.input_section > form > button:hover{
+    background-color: #706a49;
+}
+
 .input_section > form > button > span {
     font-weight: bold;
+}
+
+.status:hover{
+    background-color: transparent;
 }
 
 .input_section > form > .input > input {
@@ -119,7 +131,7 @@ h1{
 
 
 .status > strong{
-    background-color: #87805E;
+    background-color: transparent;
 }
 
 .book_shelf {
@@ -145,7 +157,7 @@ h1{
 }
 
 .book_shelf .book_list .book_item:hover{
-    background-color: #ffb96a;
+    background-color: #ECCCB2;
     transition: .5s;
 }
 
@@ -163,8 +175,12 @@ h1{
 
 
 .book_list button {
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
+    margin-left: 5px ;
+    cursor: pointer;
+    background: transparent;
+    border: none;
 }
 
 .item h5 {
@@ -208,21 +224,6 @@ h1{
     background-color: #fff;
     transition: .5s;
 }
-
-/* .book_item .checklist{ 
-    background-image: url("img/checked.svg");
-    background-repeat: no-repeat;
-}
-
-.book_item .undo{
-    background-image: url("img/restart.svg");
-    background-repeat: no-repeat;
-}
-
-.book_item .trash{
-    background-image: url("img/trash.svg");
-    background-repeat: no-repeat;
-} */
 
 .input-container{
     margin: 30px 0px;

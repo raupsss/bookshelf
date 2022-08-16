@@ -74,7 +74,7 @@ function deleteForm() {
 
 function makeButton(buttonTypeClass, eventListener) {
     const tombol = document.createElement("button");
-    tombol.innerHTML = `<img src="img/${buttonTypeClass}.svg alt="${buttonTypeClass}">`
+    tombol.innerHTML = `<img src="img/${buttonTypeClass}.svg" alt="${buttonTypeClass}">`
     tombol.addEventListener("click", function(event) {
         eventListener(event);
     });
@@ -145,19 +145,19 @@ function createUnreadButton() {
     });
 }
 
-function undoBookDone(elemenBuku) {
-    const bookTitle = elemenBuku.querySelector(".title_book").innerText;
-    const bookAuthor = elemenBuku.querySelector(".author_book").innerText;
-    const bookYear = elemenBuku.querySelector(".year_book").innerText;
+const searchInput = document.getElementById("findBookTitle");
 
-    const newBook = makeReadingList(bookTitle, bookAuthor, bookYear, false);
-    const listUnread = document.getElementById(LIST_UNREAD);
-
-    const book = findBook(elemenBuku[ID_BOOK]);
-    book.isCompleted = false;
-    newBook[ID_BOOK] = book.id;
-    listUnread.append(newBook);
-    elemenBuku.remove();
-
-    updateDataToStorage();
-}
+searchInput.addEventListener("keyup", function(e){
+    const itemBooks = document.querySelectorAll(".book_item");
+    const searchItem = e.target.value.toLowerCase();
+    
+    itemBooks.forEach(function(item){
+    if(item.textContent.toLowerCase().indexOf(searchItem) != -1){
+        item.closest("article").style.display = "block";
+    }
+    else{
+        item.closest("article").style.display = "none";
+        }
+    })
+    
+});
