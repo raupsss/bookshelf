@@ -1,18 +1,18 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Roboto Condensed', sans-serif;
 }
 
-main{
+main {
     border: 1px solid #F9F3EE;
 }
 
 .wrapper {
     width: 70%;
     margin: auto;
-    
+
 }
 
 .heading-page {
@@ -23,14 +23,14 @@ main{
 
 }
 
-h1{
+h1 {
     font-size: 40px;
     padding: 15px;
     color: #706a49;
     margin-left: 50px;
 }
 
-.find_section > form {
+.find_section>form {
     padding: 16px;
     width: 100%;
     display: grid;
@@ -39,7 +39,7 @@ h1{
     background-color: #EBD8C3;
 }
 
-.find_section > form > input {
+.find_section>form>input {
     border-radius: 5px;
     border: none;
 
@@ -48,7 +48,8 @@ h1{
 #findSubmit:hover {
     background-color: #706a49;
 }
-.find_section > form > button {
+
+.find_section>form>button {
     background-color: #87805E;
     color: white;
     padding: 10px;
@@ -63,6 +64,7 @@ h1{
     margin-bottom: 30px;
     flex-direction: column;
 }
+
 .input_section {
     display: flex;
     flex-direction: column;
@@ -71,16 +73,16 @@ h1{
     margin: 0px auto;
 }
 
-.input_section > h2 {
+.input_section>h2 {
     text-align: center;
     color: #87805E;
 }
 
-.input_section > form > .input {
+.input_section>form>.input {
     margin: 8px 0;
 }
 
-.input_section > form > button {
+.input_section>form>button {
     background-color: #87805E;
     color: white;
     border: 0;
@@ -91,19 +93,19 @@ h1{
     cursor: pointer;
 }
 
-.input_section > form > button:hover{
+.input_section>form>button:hover {
     background-color: #706a49;
 }
 
-.input_section > form > button > span {
+.input_section>form>button>span {
     font-weight: bold;
 }
 
-.status:hover{
+.status:hover {
     background-color: transparent;
 }
 
-.input_section > form > .input > input {
+.input_section>form>.input>input {
     display: block;
     width: 100%;
     padding: 8px;
@@ -112,25 +114,25 @@ h1{
 }
 
 
-.input_section > form > .input > label {
+.input_section>form>.input>label {
     color: #87805E;
     font-weight: bold;
 }
 
-.input_section > form > .input_inline {
+.input_section>form>.input_inline {
     margin: 12px 0;
     display: flex;
     align-items: center;
 }
 
-.input_section > form > .input_inline > label {
+.input_section>form>.input_inline>label {
     color: #87805E;
     font-weight: bold;
     margin-right: 10px;
 }
 
 
-.status > strong{
+.status>strong {
     background-color: transparent;
 }
 
@@ -139,15 +141,15 @@ h1{
     flex: 50%;
 }
 
-.book_shelf > h2 {
+.book_shelf>h2 {
     color: #87805E;
 }
 
-.book_shelf > .book_list {
+.book_shelf>.book_list {
     padding: 16px;
 }
 
-.book_shelf > .book_list > .book_item {
+.book_shelf>.book_list>.book_item {
     padding: 8px 16px 16px 16px;
     border: 1px solid #87805E;
     border-radius: 5px;
@@ -156,16 +158,17 @@ h1{
     box-shadow: 0 3px 6px rgb(89 93 107 / 5%), 0 8px 20px rgb(93 97 114 / 17%);
 }
 
-.book_shelf .book_list .book_item:hover{
+.book_shelf .book_list .book_item:hover {
     background-color: #ECCCB2;
     transition: .5s;
 }
 
-.book_shelf > .book_list > .book_item > h3, p {
+.book_shelf>.book_list>.book_item>h3,
+p {
     margin: 8px 0;
 }
 
-.book_shelf > .book_list > .book_item > .action > button {
+.book_shelf>.book_list>.book_item>.action>button {
     border: 0;
     padding: 5px;
     margin: 0 5px 0 0;
@@ -177,7 +180,7 @@ h1{
 .book_list button {
     width: 30px;
     height: 30px;
-    margin-left: 5px ;
+    margin-left: 5px;
     cursor: pointer;
     background: transparent;
     border: none;
@@ -204,51 +207,47 @@ h1{
     background-color: #EBD8C3;
 }
 
-.shelf-container{
+.shelf-container {
     display: flex;
     justify-content: space-between;
 }
 
 .book_item .checklist,
 .book_item .undo,
-.book_item .trash{
+.book_item .trash {
     cursor: pointer;
     border: none;
     margin-left: 5px;
     border-radius: 5px;
     background-color: transparent;
 }
-.book_item .checklist:hover,
-.book_item .undo:hover,
-.book_item .trash:hover{
-    background-color: #fff;
-    transition: .5s;
-}
 
-.input-container{
+.input-container {
     margin: 30px 0px;
 }
 
-#findBookTitle{
+#findBookTitle {
     padding: 10px;
 }
 
 @media screen and (max-width: 800px) {
+
     .wrapper,
-    .footer{
+    .footer {
         width: 100%;
     }
-    
+
     .shelf-container {
         flex-direction: column;
     }
+
     h1 {
         margin-left: 0;
     }
 }
 
 @media screen and (max-width: 500px) {
-    .heading-page{
+    .heading-page {
         flex-direction: column;
         display: flex;
         align-items: center;
